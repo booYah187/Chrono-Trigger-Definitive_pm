@@ -1,6 +1,18 @@
-Building on the work of [ct_pm](https://github.com/springah/ct_pm) and [ct_nx](https://github.com/NaGaa95/ct_nx), this fork adds a few options and a .ctp patch to create the Definitive Edition of Chrono Trigger. The standard method of applying patches to resources.bin has been enhanced, now ct binary, resources.bin and config.txt use an overlay system to allow having multiple options contained within resources.bin, with options assigned via config.txt. Applying DefinitiveEdition.ctp enables toggling FMV animated sequences, and defaults to the restored Woolsey translation (including equipment/item names), corrected palette/sprite issues, improved window/menu/text boxes, improved character portraits and 3d menu images, replaced background music with orchestral versions. The aim of this version at default settings is to satisfy the players who prefer the aesthetics of the SNES version, with the additional content of Lost Sanctum and Dimensional Vortexes, but with the ability to toggle a variety of other settings. Other features are planned, including english translation options, window/menu color selections, removed battle bars, and more. 
+# Chrono Trigger Definitive Edition
+<img src="https://github.com/booYah187/ct_pm_mod/blob/main/Chrono%20Trigger.png?raw=true" alt="alt text" width="198" height="300" />
+
+Building on the work of [ct_pm](https://github.com/springah/ct_pm) and [ct_nx](https://github.com/NaGaa95/ct_nx), this fork adds a few options and a .ctp patch to create the Definitive Edition of Chrono Trigger. The standard method of applying patches to resources.bin has been enhanced, now ct binary, resources.bin and config.txt use an overlay system to allow having multiple options contained within resources.bin, with options assigned via config.txt. Applying DefinitiveEdition.ctp enables toggling FMV animated sequences, and defaults to the restored Woolsey translation (including equipment/item names), corrected palette/sprite issues, improved window/menu/text boxes, improved character portraits and 3d menu images, replaced background music with orchestral versions. The aim of this version at default settings is to satisfy the players who prefer the aesthetics of the SNES version, with the additional content of Lost Sanctum and Dimensional Vortexes, but with the ability to toggle a variety of other settings. 
+
+Note that in order to use the modified ct binary and overlay mod files (config.txt and resources.bin patched with new /options system) they are all required for them to work, overlay resources.bin wont work without the included modified ct binary and config.txt.
+
+v1.1 includes options in ctp/config for Woolsey translation or DS/PC, blue red green or purple ui options, remvoing battle bars, and more.
+
+
+Config.txt contains descriptions of new options. New config options are in priority order, with higher ones overriding any subsequent matching /options assets (i.e. battlebarsoff must come before ui choice). New config options, variables, and associated assets can be created and patched following README.md in tools/. tools/options.ctp contains only the new overlay options/assets, not any of the base file changes made in the DefinitiveEdition.ctp, but can also serve as a base for end user customization. No config values are hardcoded, so following the format of /options/optionname/optionnumber/originaldirectory/originalfiles allows any arbitrary config names to be used and recognized.
 
 .ctp can be applied with the included /tools, other methods like ChronoMod, CT Explorer, etc. will not work without modification, as the resulting resources.bin contains more items than the vanilla resources.bin. It is recommended to apply it on PC, not handheld.
+(python3 overlayapply.py inputresources.bin outputresources.bin patchname.ctp)
+
 
 <div align=center>
 
